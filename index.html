@@ -18,23 +18,18 @@
       Telegram.WebApp.ready();
       let tg = window.Telegram.WebApp;
       tg.expand();
-      // const client = new CozeWebSDK.WebChatClient({
-      //   config: {
-      //     bot_id: "7382690187681955845", //ID of your bot on coze.com
-      //   },
-      //   componentProps: {
-      //     title: "Coze",
-      //   },
-      // });
-      // client.destroy();
-      new CozeWebSDK.WebChatClient({
-        config: {
-          bot_id: "7382690187681955845", //ID of your bot on coze.com
-        },
-        componentProps: {
-          title: "Coze",
-        },
-      });
+
+      // 自动初始化聊天界面
+      window.onload = function() {
+        new CozeWebSDK.WebChatClient({
+          config: {
+            bot_id: "7382690187681955845", //ID of your bot on coze.com
+          },
+          componentProps: {
+            title: "Coze",
+          },
+        });
+      };
     </script>
   </body>
 </html>
